@@ -9,12 +9,10 @@ public class SelIntroduction {
         //WebDriverManager.chromedriver().setup();
         WebDriver
                 driver = new ChromeDriver();
-        driver.get("https://www.google.com/");
+        driver.get("https://rahulshettyacademy.com/");
         //driver.close();
-        driver.navigate().to("http://www.google.com/");
-        Thread.sleep(2000);
-        driver.navigate().to("http://www.onet.pl/");
-        Thread.sleep(1500);
+        System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
         driver.quit();
     }
 }
