@@ -21,8 +21,12 @@ public class Locators {
         s = driver.findElement(By.cssSelector("p.error")).getText();
         System.out.println(s);
         driver.findElement(By.linkText("Forgot your password?")).click();
+        Thread.sleep(500);
         //driver.close();
-Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@placeholder=\"Name\"]")).sendKeys("WielkiMiro");
+        driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("miroslaw.dydko@wp.pl");
+        Thread.sleep(1500);
+
         driver.quit();
     }
 }

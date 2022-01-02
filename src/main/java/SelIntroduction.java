@@ -7,8 +7,7 @@ public class SelIntroduction {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver96.exe");
         //WebDriverManager.chromedriver().setup();
-        WebDriver
-                driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/");
         //driver.close();
         System.out.println(driver.getTitle());
