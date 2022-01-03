@@ -25,11 +25,17 @@ public class Locators {
         //driver.close();
         driver.findElement(By.xpath("//input[@placeholder=\"Name\"]")).sendKeys("Miroslaw");
         driver.findElement(By.xpath("//input[@placeholder=\"Email\"]")).sendKeys("WielkiMiro@wp.pl");
-        driver.findElement(By.xpath("//form/input[3]")).sendKeys("12222222");
+        driver.findElement(By.xpath("//form/input[3]")).sendKeys("+48502995535");
         driver.findElement(By.className("reset-pwd-btn")).click();
         System.out.println(driver.findElement(By.className("infoMsg")).getText());
+        driver.findElement(By.className("go-to-login-btn")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("inputUsername")).sendKeys("Miro1234");
+        driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
+        //driver.findElement(By.id("chkboxOne")).click();
+        driver.findElement(By.id("chkboxOne")).click();
+        driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
         Thread.sleep(1500);
-
         driver.quit();
     }
 }
