@@ -1,4 +1,4 @@
-package main.java;
+package main.java.section;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,8 +24,10 @@ public class Locators2 {
         s = driver.findElement(By.tagName("p")).getText();
         Assert.assertEquals(s,"You are successfully logged in.");
         s=driver.findElement(By.cssSelector("div[class=\"login-container\"] h2")).getText();
-        Assert.assertEquals(s,"Hello Miro1234,");
+        //Assert.assertEquals(s,"Hello Miro1234,");
         Thread.sleep(500);
+        driver.findElement(By.cssSelector("div>p")).click();
+        Thread.sleep(1500);
         driver.quit();
     }
 }
