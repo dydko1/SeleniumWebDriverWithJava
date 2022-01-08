@@ -1,19 +1,24 @@
 package main.java.setion007AutomateWebElements;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.time.Duration;
 
 public class UpdateStaticDropDown {
     public static void main(String[] args) throws InterruptedException {
         String s;
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver97.exe");
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         driver.manage().window().fullscreen();
@@ -28,6 +33,11 @@ public class UpdateStaticDropDown {
             driver.findElement(By.id("hrefIncAdt")).click();
             i++;
         }
+
+        driver.findElement(By.id("btnclosepaxoption")).click();
+        s = driver.findElement(By.id("divpaxinfo")).getText();
+
+        Assert.assertEquals(s, "5 Adult");
         Thread.sleep(1500);
 
         driver.quit();
