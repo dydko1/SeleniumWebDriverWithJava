@@ -1,4 +1,4 @@
-package main.java.section;
+package main.java.section005006;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
