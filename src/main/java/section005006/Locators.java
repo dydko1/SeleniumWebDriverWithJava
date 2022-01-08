@@ -9,7 +9,7 @@ import java.time.Duration;
 public class Locators {
     public static void main(String[] args) throws InterruptedException {
         String s = "abcd";
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver96.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver97.exe");
         //WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
