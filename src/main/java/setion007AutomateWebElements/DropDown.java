@@ -20,7 +20,7 @@ public class DropDown {
         driver.manage().window().maximize();
 
         driver.findElement(By.cssSelector("div[data-testid='to-testID-origin']")).click();
-        driver.findElement(By.xpath("//div[text()='BLR']")).click();
+        driver.findElement(By.xpath("//div[@class='css-1dbjc4n r-14lw9ot r-z2wwpe r-1rjd0u6 r-1g94qm0 r-u8s1d r-8fdsdq'] //div[text()='IXA']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[text()='MAA'][1]")).click();
         Thread.sleep(2000);
