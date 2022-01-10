@@ -1,5 +1,6 @@
 package main.java.setion007AutomateWebElements;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,10 +14,10 @@ import java.time.Duration;
 public class StaticDropDown {
     public static void main(String[] args) throws InterruptedException {
         String s;
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver97.exe");
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         //
         WebElement staticDropDown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
