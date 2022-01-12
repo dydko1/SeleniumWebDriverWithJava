@@ -24,19 +24,19 @@ public class ProcessItemInArray {
 
         List<WebElement> products = driver.findElements(By.cssSelector("div.product"));
 
-        List<String> vegetables = Arrays.asList("Cucumber", "Brocolli");
+        List<String> vegetables = Arrays.asList("Cucumber", "Brocolli","Tomato","Carrot","Almonds");
 
         for (WebElement element : products) {
             String[] name = element.getText().split(" ");
             String formatName = name[0];
 
-
             if (vegetables.contains(formatName)) {
                 //System.out.println(name);
-                element.findElement(By.cssSelector("button")).click();
+                element.findElement(By.cssSelector("div.product-action")).click();
                 //break;
             }
         }
+        driver.findElement(By.cssSelector("img[alt=\"Cart\"]")).click();
         Thread.sleep(2500);
         driver.quit();
     }
