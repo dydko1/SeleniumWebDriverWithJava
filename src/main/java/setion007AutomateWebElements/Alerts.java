@@ -28,7 +28,7 @@ public class Alerts {
 
         Thread.sleep(500);
         driver.findElement(By.id("confirmbtn")).click();
-        driver.switchTo().alert().dismiss(); 
+        driver.switchTo().alert().dismiss();
 
         Thread.sleep(500);
         driver.quit();
