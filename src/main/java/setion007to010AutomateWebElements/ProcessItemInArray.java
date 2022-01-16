@@ -1,4 +1,4 @@
-package main.java.setion007AutomateWebElements;
+package main.java.setion007to010AutomateWebElements;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-public class Synchronization {
+public class ProcessItemInArray {
     public static void main(String[] args) throws InterruptedException {
         String s = "Mirek";
         ChromeOptions options = new ChromeOptions();
@@ -25,6 +25,7 @@ public class Synchronization {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://rahulshettyacademy.com/seleniumPractise");
 
+        // very important sleep
         Thread.sleep(500);
         List<WebElement> products = driver.findElements(By.cssSelector("div.products div.product"));
 

@@ -1,11 +1,9 @@
-package main.java.setion007AutomateWebElements;
+package main.java.setion007to010AutomateWebElements;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.Assert;
 
 import java.time.Duration;
 
