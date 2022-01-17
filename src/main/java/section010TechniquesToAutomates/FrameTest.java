@@ -26,8 +26,11 @@ public class FrameTest {
         driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
         driver.findElement(By.id("draggable")).click();
         WebElement source = driver.findElement(By.id("draggable"));
-        WebElement destination =driver.findElement(By.id("droppable"));
-        a.dragAndDrop(source,destination).build().perform();
+        WebElement destination = driver.findElement(By.id("droppable"));
+        a.dragAndDrop(source, destination).build().perform();
+
+        // driver.switchTo().defaultContent();
+        driver.findElement(By.cssSelector("li.active")).click();
         Thread.sleep(2000);
         driver.quit();
     }
