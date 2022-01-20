@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class Scope {
+public class Calendar {
     public static void main(String[] args) throws InterruptedException {
         String s = "Mirek";
         ChromeOptions options = new ChromeOptions();
@@ -24,29 +24,18 @@ public class Scope {
         Actions a = new Actions(driver);
         //WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        driver.get("https://www.path2usa.com/travel-companions/");
+        driver.findElement(By.id("ez-accept-all")).click();
+        driver.findElement(By.id("travel_date")).click();
 
-        System.out.println(driver.findElements(By.tagName("a")).size());
+        List<WebElement> dates = driver.findElements(By.className("day"));
+        int days = dates.size();
 
-        WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
-        System.out.println(footerDriver.findElements(By.tagName("a")).size());
-        WebElement columnDriver = footerDriver.findElement(By.cssSelector("#gf-BIG > table > tbody > tr > td:first-child > ul"));
-        List<WebElement> links = columnDriver.findElements(By.tagName("a"));
-
-        for (WebElement link : links) {
-            String clickOnLink = Keys.chord(Keys.CONTROL, Keys.ENTER);
-            link.sendKeys(clickOnLink);
+        for (int i = 0; i < days; i++) {
+            System.out.println(dates.get(i).getText());
         }
 
-        Set tabs = driver.getWindowHandles();
-        Iterator<String> it = tabs.iterator();
-
-        while (it.hasNext()) {
-            driver.switchTo().window(it.next());
-            System.out.println("+++++ " + driver.getTitle() + " +++++");
-        }
-
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         driver.quit();
     }
 
