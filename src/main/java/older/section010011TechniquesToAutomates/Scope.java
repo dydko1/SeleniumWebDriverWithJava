@@ -1,4 +1,4 @@
-package main.java.section010TechniquesToAutomates;
+package main.java.section010011TechniquesToAutomates;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

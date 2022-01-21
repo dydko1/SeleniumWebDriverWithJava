@@ -1,8 +1,7 @@
-package main.java.section010TechniquesToAutomates;
+package main.java.section010011TechniquesToAutomates;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,11 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
-public class Calendar {
+public class FrameTest {
     public static void main(String[] args) throws InterruptedException {
         String s = "Mirek";
         ChromeOptions options = new ChromeOptions();
@@ -24,18 +20,16 @@ public class Calendar {
         Actions a = new Actions(driver);
         //WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("https://www.path2usa.com/travel-companions/");
-        driver.findElement(By.id("ez-accept-all")).click();
-        driver.findElement(By.id("travel_date")).click();
+        driver.get("https://jqueryui.com/droppable/");
+        driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
+        driver.findElement(By.id("draggable")).click();
+        WebElement source = driver.findElement(By.id("draggable"));
+        WebElement destination = driver.findElement(By.id("droppable"));
+        a.dragAndDrop(source, destination).build().perform();
 
-        List<WebElement> dates = driver.findElements(By.className("day"));
-        int days = dates.size();
-
-        for (int i = 0; i < days; i++) {
-            System.out.println(dates.get(i).getText());
-        }
-
-        Thread.sleep(1000);
+        // driver.switchTo().defaultContent();
+        driver.findElement(By.cssSelector("li.active")).click();
+        Thread.sleep(2000);
         driver.quit();
     }
 

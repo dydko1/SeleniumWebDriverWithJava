@@ -1,9 +1,8 @@
-package main.java.section010TechniquesToAutomates;
+package main.java.section010011TechniquesToAutomates;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -12,7 +11,7 @@ import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
-public class FrameTest {
+public class WindowHandles {
     public static void main(String[] args) throws InterruptedException {
         String s = "Mirek";
         ChromeOptions options = new ChromeOptions();
@@ -22,16 +21,21 @@ public class FrameTest {
         Actions a = new Actions(driver);
         //WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("https://jqueryui.com/droppable/");
-        driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
-        driver.findElement(By.id("draggable")).click();
-        WebElement source = driver.findElement(By.id("draggable"));
-        WebElement destination = driver.findElement(By.id("droppable"));
-        a.dragAndDrop(source, destination).build().perform();
+        driver.get("https://rahulshettyacademy.com/loginpagePractise/#");
 
-        // driver.switchTo().defaultContent();
-        driver.findElement(By.cssSelector("li.active")).click();
-        Thread.sleep(2000);
+        driver.findElement(By.cssSelector(".blinkingText")).click();
+        Set<String> windows = driver.getWindowHandles(); // parent/ child/ etc
+        Iterator<String> it = windows.iterator();
+        String parentId = it.next();
+        System.out.println(parentId);
+        String childId=it.next();
+        System.out.println(childId);
+        Thread.sleep(5000);
+        driver.switchTo().window(childId);
+        System.out.println(By.cssSelector(".im-para.red").findElement(driver).getText());
+        driver.switchTo().window(parentId);
+
+        Thread.sleep(1000);
         driver.quit();
     }
 
