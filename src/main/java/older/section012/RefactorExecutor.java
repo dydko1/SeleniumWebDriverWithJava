@@ -1,4 +1,4 @@
-package main.java.section012;
+package main.java.older.section012;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

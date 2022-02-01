@@ -1,4 +1,4 @@
-package main.java.section007to010AutomateWebElements;
+package main.java.older.section007to010AutomateWebElements;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package main.java.section005006;
+package main.java.older.section005006;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
