@@ -1,4 +1,4 @@
-package test.java;
+package test.java.qaclickacademy;
 
 import org.testng.annotations.Test;
 
