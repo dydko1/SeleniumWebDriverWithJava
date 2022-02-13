@@ -87,7 +87,31 @@
                     </plugins>
                 </pluginManagement>
             </build>
+        </profile>
 
+        <profile>
+            <id>test1</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M1</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <configuration>
+                                    <tasks>
+                                        <echo>Using env.test.properties</echo>
+                                        <copy file="src/main/resources/env.test.properties"
+                                              tofile="${project.build.outputDirectory}/env.properties"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
     <properties>
