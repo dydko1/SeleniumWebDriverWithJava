@@ -14,6 +14,6 @@ public class Page1Miro {
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
         Thread.sleep(2500);
-        driver.quit();
+        driver.quit();;
     }
 }
