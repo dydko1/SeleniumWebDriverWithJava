@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="test.java.qaclickacademy.AppiumTestValue"/>
+      <class name="test.testOlder.qaclickacademy.AppiumTestValue"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

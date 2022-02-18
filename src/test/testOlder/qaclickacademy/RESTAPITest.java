@@ -1,4 +1,4 @@
-package test.java.qaclickacademy;
+package test.testOlder.qaclickacademy;
 
 import org.testng.annotations.Test;
 //rahulonlinetutor@gmail.com
