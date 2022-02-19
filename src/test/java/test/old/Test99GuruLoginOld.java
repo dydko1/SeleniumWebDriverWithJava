@@ -1,4 +1,4 @@
-package test.java.test;
+package test.java.test.old;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +10,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import test.pages.Guru99HomePageOld;
-import test.pages.Guru99LoginOld;
+import test.pages.old.Guru99HomePageOld;
+import test.pages.old.Guru99LoginOld;
 
-public class Test99GuruLogin {
+public class Test99GuruLoginOld {
 
     // String driverPath = "C:\\geckodriver.exe";
 
@@ -55,7 +55,8 @@ public class Test99GuruLogin {
         //Verify home page
         Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mgr123"));
     }
-    @AfterMethod
+
+    @AfterTest
     public void close11() throws InterruptedException {
         System.out.println("\t*** After test ***");
         Thread.sleep(1000);
