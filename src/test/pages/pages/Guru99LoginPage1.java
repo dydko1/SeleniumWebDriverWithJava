@@ -1,4 +1,4 @@
-package test.pages;
+package test.pages.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +33,5 @@ public class Guru99LoginPage1 {
     public void loginToGuru99(String strUserName, String strPassword) {
         this.setUserName(strUserName);
         this.setPassword(strPassword);
-
     }
 }

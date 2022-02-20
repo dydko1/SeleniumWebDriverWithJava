@@ -9,12 +9,12 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import test.pages.Guru99HomePage1;
-import test.pages.Guru99LoginPage1;
+import test.pages.factory.Guru99HomePage2;
+import test.pages.factory.Guru99LoginPage2;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestGuru99LoginAndHome {
+public class TestGuru99LoginAndHome2 {
     WebDriver driver;
 
     @BeforeTest
@@ -38,7 +38,7 @@ public class TestGuru99LoginAndHome {
 
     @Test(priority = 1)
     public void testLoginPage() {
-        Guru99LoginPage1 guru99LoginPage1 = new Guru99LoginPage1(driver);
+        Guru99LoginPage2 guru99LoginPage1 = new Guru99LoginPage2(driver);
         String loginTitle = guru99LoginPage1.getLoginTitle();
         Assert.assertTrue(loginTitle.toLowerCase().contains("guru99 bank"));
         guru99LoginPage1.loginToGuru99("mgr123", "mgr!23");
@@ -47,7 +47,7 @@ public class TestGuru99LoginAndHome {
 
     @Test(priority = 2)
     public void testHomePage() {
-        Guru99HomePage1 guru99HomePage = new Guru99HomePage1(driver);
+        Guru99HomePage2 guru99HomePage = new Guru99HomePage2(driver);
         Assert.assertTrue(guru99HomePage.getManagerId().toLowerCase().contains("manger id : mgr123"));
     }
 
