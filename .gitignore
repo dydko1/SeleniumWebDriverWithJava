@@ -80,3 +80,7 @@ fabric.properties
 */target/*
 */target/**
 /target/**
+
+*/drivers/*
+*/drivers/**
+/drivers/**
