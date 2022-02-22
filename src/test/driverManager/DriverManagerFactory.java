@@ -1,21 +1,23 @@
 package test.driverManager;
 
 public class DriverManagerFactory {
-
     public static DriverManager getManager(DriverType type) {
-
         DriverManager driverManager;
 
         switch (type) {
-            case CHROME:
-                driverManager = new ChromeDriverManager();
-
+            case SAFARI:
+                driverManager = new SafariDriverManager();
+                break;
+            case IE:
+                driverManager = new IEDriverManager();
+                break;
+            case FIREFOX:
+                driverManager = new FirefoxDriverManager();
+                break;
             default:
-                System.out.println("Default driver");
                 driverManager = new ChromeDriverManager();
                 break;
         }
         return driverManager;
-
     }
 }

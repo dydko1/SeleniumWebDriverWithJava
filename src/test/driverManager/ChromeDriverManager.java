@@ -1,27 +1,24 @@
 package test.driverManager;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class ChromeDriverManager extends DriverManager {
-
-    private ChromeDriverService chService;
+    private ChromeDriverService chromeDriverService;
 
     @Override
-    public void startService() {
-        if (null == chService) {
+    protected void startService() {
+        if (chromeDriverService == null) {
             try {
-                chService = new ChromeDriverService.Builder()
+                chromeDriverService = new ChromeDriverService.Builder()
                         .usingDriverExecutable(new File("drivers/chromedriver.exe"))
                         .usingAnyFreePort()
                         .build();
-                chService.start();
+                chromeDriverService.start();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -29,18 +26,18 @@ public class ChromeDriverManager extends DriverManager {
     }
 
     @Override
-    public void stopService() {
-        if (null != chService && chService.isRunning())
-            chService.stop();
+    protected void stopService() {
+        if (chromeDriverService != null && chromeDriverService.isRunning()) {
+            chromeDriverService.stop();
+        }
     }
 
     @Override
-    public void createDriver() {
+    protected void createDriver() {
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        driver = new ChromeDriver(chService, capabilities);
+        driver = new ChromeDriver(chromeDriverService, capabilities);
     }
-
 }
