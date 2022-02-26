@@ -34,16 +34,6 @@ public class Login {
         System.out.println("New branch 0005");
     }
 
-    public void setPswd1(WebElement pswd) {
-        this.pswd = pswd;
-        System.out.println("update in 0005");
-    }
-
-    public void setPswd2(WebElement pswd) {
-        this.pswd = pswd;
-        System.out.println("New branch 0005");
-    }
-
     //Method that performs login action using the web elements
     public void LogIn_Action(String uName, String pwd) {
         username.sendKeys(uName);
