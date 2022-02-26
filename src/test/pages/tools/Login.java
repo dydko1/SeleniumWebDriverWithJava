@@ -29,6 +29,10 @@ public class Login {
     @FindBy(id = "login")
     WebElement loginBtn;
 
+    public void setPswd(WebElement pswd) {
+        this.pswd = pswd;
+        System.out.println("Nowy teststtstststst");
+    }
 
     //Method that performs login action using the web elements
     public void LogIn_Action(String uName, String pwd) {
