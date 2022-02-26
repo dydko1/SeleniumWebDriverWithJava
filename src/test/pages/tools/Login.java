@@ -29,7 +29,7 @@ public class Login {
     @FindBy(id = "login")
     WebElement loginBtn;
 
-    public void setPswd(WebElement pswd) {
+    public void setPswd2(WebElement pswd) {
         this.pswd = pswd;
         System.out.println("New branch 0005");
     }
