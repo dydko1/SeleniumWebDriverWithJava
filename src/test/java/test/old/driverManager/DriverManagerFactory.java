@@ -1,4 +1,4 @@
-package test.driverManager;
+package test.java.test.old.driverManager;
 
 public class DriverManagerFactory {
     public static DriverManager getManager(DriverType type) {

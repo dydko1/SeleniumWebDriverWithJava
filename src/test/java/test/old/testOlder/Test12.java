@@ -1,4 +1,4 @@
-package test.testOlder;
+package test.java.test.old.testOlder;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

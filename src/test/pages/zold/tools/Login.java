@@ -1,4 +1,4 @@
-package test.pages.tools;
+package test.pages.zold.tools;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

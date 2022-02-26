@@ -1,6 +1,6 @@
-package test.driverManager;
+package test.java.test.old.driverManager;
 
-public class FirefoxDriverManager extends DriverManager {
+public class IEDriverManager extends DriverManager {
     @Override
     protected void startService() {
 

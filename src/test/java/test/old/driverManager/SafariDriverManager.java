@@ -1,6 +1,6 @@
-package test.driverManager;
+package test.java.test.old.driverManager;
 
-public class IEDriverManager extends DriverManager {
+public class SafariDriverManager extends DriverManager {
     @Override
     protected void startService() {
 

@@ -1,23 +1,20 @@
-package test.java.test;
+package test.java.test.old;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import test.pages.pages.Guru99HomePage1;
-import test.pages.pages.Guru99LoginPage1;
-import test.pages.tools.Login;
-import test.pages.tools.Profile;
+import test.pages.zold.pages.Guru99HomePage1;
+import test.pages.zold.pages.Guru99LoginPage1;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestToolsLoginTC {
+public class TestGuru99LoginAndHome1 {
     WebDriver driver;
 
     @BeforeTest
@@ -28,22 +25,30 @@ public class TestToolsLoginTC {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         System.out.println("\t*** Before test ***");
-        driver.get("https://demoqa.com/login");
+        driver.get("http://demo.guru99.com/V4/");
     }
 
     @Test(priority = 0)
     public void testPrivacy() throws InterruptedException {
-        //Instantiating Login & Profile page using initElements()
-        Thread.sleep(2000);
-        Login loginPg = PageFactory.initElements(driver, Login.class);
-        Profile profilePg = PageFactory.initElements(driver, Profile.class);
+        driver.switchTo().frame("gdpr-consent-notice");
+        driver.findElement(By.xpath("//button[@id='save']")).click();
+        //driver.switchTo().defaultContent();
+        Thread.sleep(200);
+    }
 
-        //Using the methods created in pages class to perform actions
-        loginPg.LogIn_Action("mirek", "Mirdydxxxxx^");
-        Thread.sleep(2000);
-        profilePg.verifyUser("mirek");
-        profilePg.logout_Action();
-        Thread.sleep(2000);
+    @Test(priority = 1)
+    public void testLoginPage() {
+        Guru99LoginPage1 guru99LoginPage1 = new Guru99LoginPage1(driver);
+        String loginTitle = guru99LoginPage1.getLoginTitle();
+        Assert.assertTrue(loginTitle.toLowerCase().contains("guru99 bank"));
+        guru99LoginPage1.loginToGuru99("mgr123", "mgr!23");
+        guru99LoginPage1.clickLogin();
+    }
+
+    @Test(priority = 2)
+    public void testHomePage() {
+        Guru99HomePage1 guru99HomePage = new Guru99HomePage1(driver);
+        Assert.assertTrue(guru99HomePage.getManagerId().toLowerCase().contains("manger id : mgr123"));
     }
 
     @AfterTest

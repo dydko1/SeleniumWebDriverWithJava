@@ -1,4 +1,4 @@
-package test.driverManager;
+package test.java.test.old.driverManager;
 
 import org.openqa.selenium.WebDriver;
 

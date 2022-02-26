@@ -1,4 +1,4 @@
-package test.java.test;
+package test.java.test.old;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -9,8 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import test.pages.factory.Guru99HomePage2;
-import test.pages.factory.Guru99LoginPage2;
+import test.pages.zold.factory.Guru99HomePage2;
+import test.pages.zold.factory.Guru99LoginPage2;
 
 import java.util.concurrent.TimeUnit;
 

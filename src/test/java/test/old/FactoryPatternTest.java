@@ -1,4 +1,4 @@
-package test.java.test;
+package test.java.test.old;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -6,9 +6,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import test.driverManager.DriverManager;
-import test.driverManager.DriverManagerFactory;
-import test.driverManager.DriverType;
+import test.java.test.old.driverManager.DriverManager;
+import test.java.test.old.driverManager.DriverManagerFactory;
+import test.java.test.old.driverManager.DriverType;
 
 public class FactoryPatternTest {
 

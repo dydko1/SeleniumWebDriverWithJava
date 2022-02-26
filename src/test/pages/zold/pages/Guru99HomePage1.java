@@ -1,4 +1,4 @@
-package test.pages.pages;
+package test.pages.zold.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
