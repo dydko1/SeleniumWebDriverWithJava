@@ -31,7 +31,7 @@ public class Login {
 
     public void setPswd(WebElement pswd) {
         this.pswd = pswd;
-        System.out.println("Nowy teststtstststst");
+        System.out.println("New branch 0005");
     }
 
     //Method that performs login action using the web elements
