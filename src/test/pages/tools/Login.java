@@ -29,9 +29,19 @@ public class Login {
     @FindBy(id = "login")
     WebElement loginBtn;
 
+    public void setPswd(WebElement pswd) {
+        this.pswd = pswd;
+        System.out.println("New branch 0005");
+    }
+
     public void setPswd1(WebElement pswd) {
         this.pswd = pswd;
         System.out.println("update in 0005");
+    }
+
+    public void setPswd2(WebElement pswd) {
+        this.pswd = pswd;
+        System.out.println("New branch 0005");
     }
 
     //Method that performs login action using the web elements
