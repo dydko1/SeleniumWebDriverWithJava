@@ -21,21 +21,5 @@ public class BaseTest {
     @BeforeClass
     public void classLevelSetup() {
         Log.info("Tests is starting!");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        WebDriverManager.chromedriver().setup();
-        //driver = new ChromeDriver();
-        driver = new ChromeDriver();
-    }
-
-    @BeforeMethod
-    public void methodLevelSetup() {
-        homePage = new HomePage(driver);
-    }
-
-    @AfterClass
-    public void teardown() {
-        Log.info("Tests are ending!");
-        driver.quit();
     }
 }
