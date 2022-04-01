@@ -9,9 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import tests.BaseTest;
 
-public class TestngAnnotation extends BaseTest {
+public class TestngAnnotation  {
   
    // Test Case 1
    @Test
