@@ -5,7 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.SkipException;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -47,7 +50,7 @@ public class ListenerTestNGTestCase {
         System.out.println("This method to test fail");
     }
 
-    @AfterMethod
+    @AfterTest
     public void closeDriver(){
         driver.close();
         driver.quit();
