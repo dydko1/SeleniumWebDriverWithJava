@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 @Listeners(utils.listeners.ListenerTestNG.class)
 public class ListenerTestNGTestCase {
 
@@ -19,8 +21,10 @@ public class ListenerTestNGTestCase {
     @BeforeMethod
     public void start() {
         ChromeOptions options = new ChromeOptions();
+        //options.addArguments("start-maximized");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
     }
 
     @Test(priority = 1)
