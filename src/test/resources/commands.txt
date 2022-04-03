@@ -1,1 +1,2 @@
-mvn clean test -Dsurefire.suiteXmlFiles="src/test/xmlFiles/TestNG014MiroTests.xml"
+mvn clean test -Dsurefire.suiteXmlFiles="src/test/xmlFiles/TestNG014MiroTests.xml
+mvn clean test -Dsurefire.suiteXmlFiles="src/test/xmlFiles/TestNG015MiroTests.xml //extend report
