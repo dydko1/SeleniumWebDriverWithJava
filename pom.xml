@@ -83,8 +83,9 @@
                 <version>${maven-surefire-plugin-version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>TestNG.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/xmlFiles/TestNG013Listeners.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <reportsDirectory>Report-Output</reportsDirectory>
                 </configuration>
             </plugin>
         </plugins>
